@@ -50,9 +50,6 @@ export default function LaptopScrollSection() {
       // 4. Web Apps Section
       // Fade in Text 2 (Overlay)
       tl.to(text2Ref.current, { opacity: 1, duration: 1 });
-
-      // Hold for a bit
-      tl.to({}, { duration: 1 });
     },
     { scope: containerRef }
   );
@@ -60,7 +57,7 @@ export default function LaptopScrollSection() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-linear-to-b from-brand-card to-brand-dark text-white">
+      className="relative bg-linear-to-b from-brand-card to-brand-dark text-white shadow-[0_2px_0_0_#020205]">
       <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden">
         {/* Laptop Mockup */}
         <div
