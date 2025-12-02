@@ -1,43 +1,51 @@
+const steps = [
+  {
+    title: "Discover",
+    description:
+      "Assess operations, map workflows, and identify the high-impact wins.",
+  },
+  {
+    title: "Design",
+    description:
+      "Blueprint UX, technical architecture, and how teams will actually adopt it.",
+  },
+  {
+    title: "Develop",
+    description:
+      "Ship performant, secure software with integrated AI experiences.",
+  },
+  {
+    title: "Launch",
+    description:
+      "Onboard teams, transition smoothly, and stay on as partners.",
+  },
+];
+
 export default function ServicesSnapshot() {
   return (
-    <section className="relative z-10 py-24 px-4 md:px-12 lg:px-24 bg-white dark:bg-zinc-900 text-foreground">
-      <h2 className="text-4xl md:text-5xl font-bold mb-20 text-gray-900 dark:text-white">
-        In a snapshot, we ...
-      </h2>
+    <section
+      id="process"
+      className="relative z-10 flex justify-center bg-brand-card px-4 py-24 text-brand-dark">
+      <div className="w-full max-w-5xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-brand-muted">
+          Our process
+        </p>
+        <h2 className="mt-4 text-4xl font-semibold md:text-5xl">
+          From first call to ongoing partnership.
+        </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20">
-        {/* Column 1 */}
-        <div className="group">
-          <h3 className="text-2xl font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-6 mb-6 group-hover:border-foreground transition-colors duration-300 text-gray-900 dark:text-white">
-            Design
-          </h3>
-          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-            Build modern, fast, mobile-ready websites for businesses that want
-            to look professional.
-          </p>
-        </div>
-
-        {/* Column 2 */}
-        <div className="group">
-          <h3 className="text-2xl font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-6 mb-6 group-hover:border-foreground transition-colors duration-300 text-gray-900 dark:text-white">
-            Build Tools
-          </h3>
-          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-            Custom web tools to optimize operations, automate workflows, and
-            bring clarity to your processes.
-          </p>
-        </div>
-
-        {/* Column 3 */}
-        <div className="group">
-          <h3 className="text-2xl font-bold border-b-2 border-gray-200 dark:border-gray-700 pb-6 mb-6 group-hover:border-foreground transition-colors duration-300 text-gray-900 dark:text-white">
-            Integrate AI
-          </h3>
-          <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300">
-            Integrate AI into your daily workflows—automated reports,
-            intelligent chatbots, and custom automation systems to upgrade how
-            your business works.
-          </p>
+        <div className="mt-16 grid gap-6 md:grid-cols-4">
+          {steps.map((step, index) => (
+            <article
+              key={step.title}
+              className="flex flex-col gap-4 rounded-3xl border border-brand-blue/15 bg-white p-6 shadow-[0_20px_60px_rgba(9,10,20,0.08)]">
+              <span className="text-xs font-semibold uppercase tracking-[0.4em] text-brand-muted">
+                Step {index + 1}
+              </span>
+              <h3 className="text-2xl font-semibold">{step.title}</h3>
+              <p className="text-sm text-brand-muted">{step.description}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

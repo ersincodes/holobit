@@ -58,22 +58,24 @@ export default function LaptopScrollSection() {
   );
 
   return (
-    <section ref={containerRef} className="relative bg-background">
-      <div className="h-screen w-full overflow-hidden flex flex-col items-center justify-center">
+    <section
+      ref={containerRef}
+      className="relative bg-linear-to-b from-brand-card to-brand-dark text-white">
+      <div className="flex h-screen w-full flex-col items-center justify-center overflow-hidden">
         {/* Laptop Mockup */}
         <div
           ref={laptopRef}
-          className="will-change-transform relative w-[80vw] md:w-[50vw] aspect-16/10 bg-gray-800 rounded-xl p-[2%] shadow-2xl flex items-center justify-center opacity-0 scale-90 origin-center">
+          className="will-change-transform relative aspect-16/10 w-[80vw] origin-center scale-90 rounded-3xl bg-brand-dark/80 p-[2%] opacity-0 shadow-[0_60px_120px_rgba(0,0,0,0.45)] transition md:w-[50vw]">
           {/* Screen Bezel */}
-          <div className="w-full h-full bg-black rounded overflow-hidden relative border border-gray-700">
+          <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/5 bg-black">
             {/* Screen Content (Project Screenshot / Background) */}
-            <div className="w-full h-full bg-linear-to-br from-[#0f172a] to-[#1e293b] flex items-center justify-center relative">
+            <div className="relative flex h-full w-full items-center justify-center bg-linear-to-br from-brand-cyan/40 to-brand-blue/40">
               <Image
                 src="/assets/prompty-1.png"
-                alt="Sustainnery"
+                alt="Featured Cognireal project"
                 width={1500}
                 height={1000}
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
               />
             </div>
           </div>
@@ -85,20 +87,27 @@ export default function LaptopScrollSection() {
         {/* Background Overlay */}
         <div
           ref={bgRef}
-          className="absolute inset-0 bg-black z-10 pointer-events-none opacity-0"
+          className="pointer-events-none absolute inset-0 bg-brand-dark z-10 opacity-0"
         />
 
         {/* Section 4 Content: Web Applications */}
         <div
           ref={text2Ref}
-          className="absolute inset-0 flex flex-col items-center justify-center z-20 pointer-events-none opacity-0">
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 text-center px-4">
-            WEB APPLICATIONS
+          className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center gap-8 px-6 text-center opacity-0">
+          <p className="text-sm font-semibold uppercase tracking-[0.4em] text-white/70">
+            We build
+          </p>
+          <h2 className="text-5xl font-semibold leading-tight text-white md:text-7xl">
+            Web applications
           </h2>
+          <p className="max-w-3xl text-lg text-white/80 md:text-2xl">
+            Custom tools that automate workflows and make complex operations
+            effortless for your teams.
+          </p>
           <Link
-            href="#"
-            className="pointer-events-auto bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition-colors">
-            See our latest launch
+            href="#process"
+            className="pointer-events-auto rounded-full bg-white/95 px-10 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-brand-dark transition hover:bg-white">
+            See our recent launch
           </Link>
         </div>
       </div>

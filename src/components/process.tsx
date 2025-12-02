@@ -1,33 +1,36 @@
-export default function Process() {
-  const steps = [
-    { title: "Discovery", desc: "We analyze your business, workflows, and goals." },
-    { title: "Design", desc: "We structure the right UX, architecture, and system." },
-    { title: "Development", desc: "Full implementation with modern technologies." },
-    { title: "Launch & Support", desc: "Training, adjustments, and long-term support." }
-  ];
+const partnerTypes = [
+  "Operations Leaders",
+  "Marketing Teams",
+  "Product & Innovation",
+  "Executive Leadership",
+];
 
+export default function Process() {
   return (
-    <section className="relative z-10 py-24 px-4 md:px-12 lg:px-24 max-w-7xl mx-auto">
-      <h2 className="text-4xl md:text-5xl font-bold mb-20 italic">Our process</h2>
-      
-      <div className="relative border-l-2 border-gray-200 dark:border-gray-800 ml-4 md:ml-0 md:border-l-0 md:grid md:grid-cols-4 md:gap-8">
-         {steps.map((step, i) => (
-           <div key={i} className="mb-12 md:mb-0 ml-8 md:ml-0 relative group">
-              {/* Dot for mobile timeline */}
-              <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-700 md:hidden group-hover:bg-foreground transition-colors"></div>
-              
-              <div className="md:border-t-2 md:border-gray-200 md:dark:border-gray-800 md:pt-8 relative transition-all duration-300">
-                 {/* Dot for desktop timeline */}
-                 <div className="hidden md:block absolute -top-[9px] left-0 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-700 group-hover:bg-foreground transition-colors"></div>
-                 
-                 <h3 className="text-xl font-bold mb-3 group-hover:text-indigo-500 transition-colors">Step {i + 1}: {step.title}</h3>
-                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{step.desc}</p>
-              </div>
-           </div>
-         ))}
+    <section className="flex justify-center px-4 py-24">
+      <div className="w-full max-w-5xl rounded-[40px] bg-brand-dark p-10 text-white shadow-[0_40px_120px_rgba(1,3,9,0.5)]">
+        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-white/60">
+          We work with
+        </p>
+        <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">
+          Teams who need partner-level support, not another vendor.
+        </h2>
+        <p className="mt-6 max-w-3xl text-lg text-white/70">
+          Whether it is modernizing the corporate site, shipping an internal
+          dashboard, or embedding AI copilots, we design, develop, and stay with
+          you long after launch.
+        </p>
+
+        <div className="mt-10 flex flex-wrap gap-4">
+          {partnerTypes.map((partner) => (
+            <span
+              key={partner}
+              className="rounded-full border border-white/30 px-6 py-2 text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+              {partner}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
-
