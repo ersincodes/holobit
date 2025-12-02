@@ -1,13 +1,22 @@
+import Link from "next/link";
+
 export default function Mission() {
   return (
-    <section className="relative z-10 py-20 px-4 md:px-24 flex items-center justify-center text-center bg-background">
-      <blockquote className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight max-w-5xl text-foreground">
-        &ldquo;In HoloBit we help companies{" "}
-        <span className="font-semibold text-indigo-500">modernize</span>,{" "}
-        <span className="font-semibold text-indigo-500">optimize</span>, and{" "}
-        <span className="font-semibold text-indigo-500">operate smarter</span>{" "}
-        with technology that actually works.&rdquo;
-      </blockquote>
+    <section className="flex justify-center px-4 pb-24">
+      <div className="w-full max-w-4xl rounded-[40px] border border-brand-blue/15 bg-white p-12 text-center shadow-[0_25px_80px_rgba(8,10,20,0.08)]">
+        <h2 className="text-4xl font-semibold text-brand-dark md:text-5xl">
+          Ready to transform your business?
+        </h2>
+        <p className="mt-4 text-lg text-brand-muted">
+          Share your current challenges and we will return with a plan in under
+          48 hours.
+        </p>
+        <Link
+          href="#footer"
+          className="mt-10 inline-flex items-center rounded-full bg-gradient-to-r from-brand-cyan to-brand-blue px-12 py-4 text-sm font-semibold uppercase tracking-[0.3em] text-white shadow-[0_20px_60px_rgba(56,88,255,0.45)] transition hover:shadow-[0_25px_70px_rgba(56,88,255,0.6)]">
+          Book a discovery call
+        </Link>
+      </div>
     </section>
   );
 }
