@@ -168,7 +168,7 @@ const ServicesGraph = () => {
           <div
             ref={webDesignRef}
             className="flex flex-col items-center justify-center md:pt-32">
-            <div className="group relative flex flex-col items-center gap-4 p-1 text-center backdrop-blur-md transition-all duration-300 md:w-64">
+            <div className="group relative flex flex-col items-center gap-4 p-1 text-center transition-all duration-300 md:w-64">
               <div className="flex items-center justify-center">
                 <Globe className="h-10 w-10 text-blue-600" aria-hidden="true" />
               </div>
@@ -183,7 +183,7 @@ const ServicesGraph = () => {
           <div
             ref={aiRef}
             className="flex flex-col items-center justify-end pb-8 md:justify-end md:pb-20">
-            <div className="group relative flex flex-col items-center p-1 gap-4 ring-white/50 backdrop-blur-md transition-all duration-300 md:w-64">
+            <div className="group relative flex flex-col items-center p-1 gap-4 ring-white/50 transition-all duration-300 md:w-64">
               <div className="flex items-center justify-center">
                 <BrainCircuit
                   className="h-10 w-10 text-purple-600"
@@ -203,7 +203,7 @@ const ServicesGraph = () => {
           <div
             ref={webAppRef}
             className="flex flex-col items-center justify-center md:pt-32">
-            <div className="group relative flex flex-col items-center gap-4 p-1 text-center backdrop-blur-md transition-all duration-300 md:w-64">
+            <div className="group relative flex flex-col items-center gap-4 p-1 text-center transition-all duration-300 md:w-64">
               <div className="flex items-center justify-center">
                 <Settings
                   className="h-10 w-10 text-indigo-600"
