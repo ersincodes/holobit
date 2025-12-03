@@ -1,7 +1,39 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "./navbar";
+import { useEffect, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  const [logoVisible, setLogoVisible] = useState(true);
+
+  useEffect(() => {
+    const heroSection = document.getElementById("hero");
+    const servicesSection = document.getElementById("services-graph");
+
+    if (!heroSection || !servicesSection) return;
+
+    // Use ScrollTrigger for precise sync with flying logo
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: heroSection,
+      start: "bottom 90%",
+      endTrigger: servicesSection,
+      end: "top 80%", // Match the flying logo end point
+      onUpdate: (self) => {
+        // Hide hero logo when animation starts (progress > 1%)
+        setLogoVisible(self.progress < 0.01);
+      },
+    });
+
+    return () => {
+      scrollTrigger.kill();
+    };
+  }, []);
+
   return (
     <section
       id="hero"
@@ -41,14 +73,22 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 flex max-w-4xl flex-col items-center gap-8 text-center">
-        <Image
-          src="/assets/logo-hero-1.png"
-          alt="Cognireal icon"
-          width={260}
-          height={260}
-          priority
-          className="h-44 w-44 drop-shadow-[0_40px_80px_rgba(39,73,199,0.35)] md:h-64 md:w-64"
-        />
+        {/* Hidden reference element for position calculation */}
+        <div
+          id="hero-logo"
+          className="h-44 w-44 md:h-64 md:w-64"
+          aria-hidden="true">
+          <Image
+            src="/assets/logo-hero-1.png"
+            alt="Cognireal icon"
+            width={260}
+            height={260}
+            priority
+            className={`h-full w-full drop-shadow-[0_40px_80px_rgba(39,73,199,0.35)] transition-opacity duration-300 ${
+              logoVisible ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </div>
 
         <div className="space-y-4">
           <h1 className="text-3xl font-black uppercase leading-tight tracking-[0.08em] md:text-5xl">
